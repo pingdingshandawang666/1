@@ -5,7 +5,6 @@ from datetime import datetime
 import json
 
 #设置网页logo
-st.logo('🤠')
 st.set_page_config(
     page_title="AI智能伴侣",
     page_icon="🤖",
