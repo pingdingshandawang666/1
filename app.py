@@ -88,7 +88,7 @@ for message in st.session_state.messages:
 with st.sidebar:
     st.title("AI智能伴侣")
     st.subheader('对话管理')
-    if st.button("新建对话", width='stretch', icon='✏'):
+    if st.button("新建对话", use_container_width=True, icon="✏️"):
         save_session()
     #新建对话信息
         if st.session_state.messages:
@@ -103,12 +103,12 @@ with st.sidebar:
         col1, col2 = st.columns([4, 1])
         with col1:
             # 加载对话
-            if st.button(session, width='stretch', icon='✉', key=f'load{session}',type='primary' if session==st.session_state.current_session else 'secondary'):
+            if st.button(session, use_container_width=True, icon='✉', key=f'load{session}',type='primary' if session==st.session_state.current_session else 'secondary'):
                 library_json(session)
                 st.rerun()
         with col2:
             #删除对话
-            if st.button('', width='stretch', icon='❌', key=f'delete{session}'):
+            if st.button('',use_container_width=True, icon='❌', key=f'delete{session}'):
                 delete_json(session)
                 st.rerun()
      #分割线
